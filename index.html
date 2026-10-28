@@ -57,6 +57,8 @@ h2{font:600 26px/1.2 Fraunces,Georgia,serif;margin:0 0 14px}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
 .chip{padding:5px 14px;border-radius:99px;background:#12151f;border:1px solid #2a3350}
 .chip.top{background:var(--y);color:var(--k);font-weight:700;border:0}
+.fav{margin:0;padding-left:12px;border-left:4px solid var(--y);font:600 21px/1.4 Fraunces,Georgia,serif}
+.fav b{color:var(--y)}
 button{font:700 16px Nunito,sans-serif;padding:10px 18px;border:0;border-radius:99px;background:var(--b);color:#fff;cursor:pointer}
 button:focus-visible{outline:3px solid var(--y);outline-offset:2px}
 #face{font-size:54px;line-height:1;transition:transform .4s}
@@ -141,9 +143,8 @@ button:focus-visible{outline:3px solid var(--y);outline-offset:2px}
     <h2>Your playlist</h2>
     <p class="song"><b>Case 143</b><i>This is our case.</i></p>
     <p class="song"><b>Chk Chk Boom</b></p>
-    <div class="chips">
-      <span class="chip top">Felix 🫀</span><span class="chip">Bang Chan</span><span class="chip">Han</span><span class="chip">Hyunjin</span>
-    </div>
+    <p class="fav">Favorite member: <b>Felix 🫀</b></p>
+    <p class="small" style="margin:8px 0 0">Also in your top four: Bang Chan, Han, Hyunjin</p>
   </section>
 
   <section class="card" style="text-align:center">
