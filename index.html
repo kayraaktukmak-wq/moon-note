@@ -3,15 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
 <title>For Jazz</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌙%3C/text%3E%3C/svg%3E">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;1,500&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#f6f1e7;--y:#f7c948;--b:#3b6cf0;--k:#07080d;--card:rgba(7,8,13,.8)}
+:root{color-scheme:dark;--ink:#f6f1e7;--y:#c99416;--b:#3b6cf0;--k:#07080d;--card:rgba(7,8,13,.8)}
 *{box-sizing:border-box}
 body{margin:0;font:17px/1.65 Nunito,system-ui,sans-serif;color:var(--ink);background:#000;overflow-x:hidden}
 h2{font:600 26px/1.2 Fraunces,Georgia,serif;margin:0 0 14px}
-#sky{position:fixed;inset:0;z-index:-3;background:rgb(247,201,72)}
+#sky{position:fixed;inset:0;z-index:-3;background:rgb(190,140,25)}
 #stars{position:fixed;inset:0;z-index:-2;opacity:0;pointer-events:none}
 .star{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff}
 #orb{position:fixed;z-index:-1;font-size:46px;line-height:1;pointer-events:none}
@@ -32,7 +33,7 @@ h2{font:600 26px/1.2 Fraunces,Georgia,serif;margin:0 0 14px}
 @keyframes in{from{opacity:0}to{opacity:1}}
 .b{max-width:80%;padding:10px 15px;border-radius:18px;margin:8px 0}
 .b.me{background:var(--b)}
-.b.her{background:var(--y);color:var(--k);margin-left:auto}
+.b.her{background:var(--y);color:#07080d;font-weight:700;margin-left:auto}
 .msg p{margin:0 0 14px}
 .note{margin-top:24px;padding-top:16px;border-top:1px solid #2a3350;font:italic 500 20px/1.5 Fraunces,Georgia,serif;color:var(--y);opacity:0;transition:opacity 2.5s 2s}
 .msg.in .note{opacity:1}
@@ -169,6 +170,7 @@ button:focus-visible{outline:3px solid var(--y);outline-offset:2px}
     <p id="catTxt" class="small">Very lazy. Tap to wake.</p>
   </section>
 
+  <p class="small" style="text-align:center;position:relative;z-index:1">P.S. A plate of chole chawal is waiting for you. Dairy on the side is allowed.</p>
   <div class="feather" title="🦚">🦚</div>
 </main>
 <div id="scoot">🛵</div>
@@ -180,7 +182,7 @@ const RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
 let t0=performance.now(),iv;
 
 /* 20-minute day: morning yellow, noon gold, evening blue, midnight black */
-const S=[[0,[247,201,72]],[.3,[255,224,138]],[.5,[30,58,138]],[.75,[5,6,11]],[1,[247,201,72]]];
+const S=[[0,[190,140,25]],[.3,[205,158,45]],[.5,[30,58,138]],[.75,[5,6,11]],[1,[190,140,25]]];
 function skyAt(t){let a,b;for(let i=1;i<S.length;i++){if(t<=S[i][0]){a=S[i-1];b=S[i];break}}
   const k=(t-a[0])/(b[0]-a[0]);return a[1].map((v,i)=>Math.round(v+(b[1][i]-v)*k))}
 for(let i=0;i<70;i++){const s=document.createElement('i');s.className='star';
@@ -195,7 +197,7 @@ function frame(now){
   requestAnimationFrame(frame)}
 requestAnimationFrame(frame);
 
-function confetti(){const c=['#f7c948','#3b6cf0','#fff','#ff7ab6'];
+function confetti(){const c=['#c99416','#3b6cf0','#fff','#ff7ab6'];
   for(let i=0;i<80;i++){const d=document.createElement('div');d.className='cf';
     d.style.left=Math.random()*100+'vw';d.style.background=c[i%4];
     d.style.animationDuration=(2+Math.random()*2.5)+'s';d.style.animationDelay=Math.random()*.6+'s';
